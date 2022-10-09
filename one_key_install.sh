@@ -89,8 +89,8 @@ function Config_DockerRedis(){
 
 #main方法
 function Main(){
-    Modify_yum
     Install_Software
+    Modify_yum    
     Install_GO
     Install_Docker
     Config_Vim
