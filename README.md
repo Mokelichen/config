@@ -2,6 +2,7 @@
 一台centos 7 机器并且能连通外网
 
 ### 获取脚本
+用户：root
 1.安装git
 ```sh
 yum install git -y
