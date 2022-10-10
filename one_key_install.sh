@@ -40,13 +40,9 @@ function Install_Docker(){
 }
 
 #配置vim
-function Config_Vim(){
-    export GOROOT=/usr/local/go
-    export GOBIN=$GOROOT/bin
-    export PATH=$PATH:$GOBIN
-    export GOPATH=~/go  # 指定工作目录，你将来的开发代码放在$GOPATH/src/目录下
-    . ~/.bashrc #载入脚本
-    cp -f config/.vimrc ~/.vimrc
+function Config_Vim(){    
+    cp -f .bashrc ~/.bashrc
+    cp -f .vimrc ~/.vimrc
 
     go env -w GO111MODULE=on
     go env -w GOPROXY=https://goproxy.cn,direct
@@ -68,7 +64,7 @@ function Config_DockerMysql(){
     mkdir -p /mydata/mysql/data/
     mkdir -p /mydata/mysql/log/
 
-    cp -f config/my.cnf /mydata/mysql/conf/my.cnf
+    cp -f my.cnf /mydata/mysql/conf/my.cnf
     docker pull mysql:5.7
     docker run -p 3306:3306 --name mysql -v /mydata/mysql/log:/var/log/mysql -v /mydata/mysql/data:/var/lib/mysql -v /mydata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
     docker exec -it mysql mysql -uroot -proot -e "grant all privileges on *.* to 'root'@'%' identified by 'root' with grant option;"
@@ -81,7 +77,7 @@ function Config_DockerRedis(){
     mkdir -p /mydata/redis/conf
     mkdir -p /mydata/redis/data
 
-    cp -f config/redis.conf /mydata/redis/conf/redis.conf
+    cp -f redis.conf /mydata/redis/conf/redis.conf
     docker pull redis
     docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf -d redis redis-server /etc/redis/redis.conf --appendonly yes
 
