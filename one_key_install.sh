@@ -28,7 +28,7 @@ function Install_GO(){
 function Install_Docker(){
     yum remove docker  docker-client  docker-client-latest docker-common  docker-latest docker-latest-logrotate docker-logrotate docker-engine
     yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-    yum install docker-ce docker-ce-cli containerd.io
+    yum -y install docker-ce docker-ce-cli containerd.io
     #启动docker
     systemctl start docker
     #设置开机自启
