@@ -15,3 +15,11 @@ git clone https://github.com/Mokelichen/config.git
 ```sh
 bash config/one_key_install.sh
 ```
+静静等待...
+
+### 安装vim插件
+使用vim的命令模式
+```sh
+:PlugInstall
+```
+静静等待出现左下角出现Done！
