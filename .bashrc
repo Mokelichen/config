@@ -13,4 +13,4 @@ fi
 export GOROOT=/usr/local/go
 export GOBIN=$GOROOT/bin
 export PATH=$PATH:$GOBIN
-export GOPATH=~/code
+export GOPATH=~/code #指定自己的项目路径
