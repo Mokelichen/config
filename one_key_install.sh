@@ -8,7 +8,7 @@ function Modify_yum(){
 }
 #安装常用软件
 function Install_Software(){
-    yum install -y wget curl gcc g++ gdb make python3 vim net-tools tree traceroute dnstils zip unzip git yum-utils ctags ncurses-devel 
+    yum install -y wget curl gcc g++ gdb make python3 net-tools tree traceroute dnstils zip unzip git yum-utils ctags ncurses-devel 
     #下载vim
     git clone https://github.com/vim/vim.git
     #编译安装
