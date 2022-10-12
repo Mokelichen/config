@@ -8,7 +8,16 @@ function Modify_yum(){
 }
 #安装常用软件
 function Install_Software(){
-    yum install -y wget curl gcc g++ gdb make python3 vim net-tools tree traceroute dnstils zip unzip git yum-utils ctags 
+    yum install -y wget curl gcc g++ gdb make python3 vim net-tools tree traceroute dnstils zip unzip git yum-utils ctags ncurses-devel 
+    #下载vim
+    git clone https://github.com/vim/vim.git
+    #编译安装
+    cd vim/src
+    ./configure --prefix=/usr/local
+    make
+    make install
+
+    cd ../..
     #下载Vundle插件
     mkdir -p ~/.vim/bundle
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
