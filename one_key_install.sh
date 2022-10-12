@@ -2,13 +2,14 @@
 
 #修改yum源
 function Modify_yum(){
+        yum install -y wget 
 	mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 
 	wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 	yum makecache
 }
 #安装常用软件
 function Install_Software(){
-    yum install -y wget curl gcc g++ gdb make python3 net-tools tree traceroute dnstils zip unzip git yum-utils ctags ncurses-devel 
+    yum install -y curl gcc g++ gdb make python3 net-tools tree traceroute dnstils zip unzip git yum-utils ctags ncurses-devel 
     #下载vim
     git clone https://github.com/vim/vim.git
     #编译安装
@@ -93,9 +94,9 @@ function Config_DockerRedis(){
 }
 
 #main方法
-function Main(){
+function Main(){    
+    Modify_yum
     Install_Software
-    Modify_yum    
     Install_GO
     Install_Docker
     Config_Vim
