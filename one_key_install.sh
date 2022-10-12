@@ -22,8 +22,7 @@ function Install_Software(){
     #下载Vundle插件
     mkdir -p ~/.vim/bundle
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    # 获取一些配置文件 
-    git clone https://github.com/Mokelichen/config.git
+
 }
 
 #安装go语言
