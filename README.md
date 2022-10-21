@@ -14,7 +14,7 @@ git clone https://github.com/Mokelichen/config.git
 ```
 3.运行脚本
 ```sh
-bash config/one_key_install.sh
+cd config && bash one_key_install.sh
 ```
 静静等待...
 
