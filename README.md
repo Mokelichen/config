@@ -16,7 +16,7 @@ git clone https://github.com/Mokelichen/config.git
 ```sh
 cd config && bash one_key_install.sh
 ```
-静静等待...
+去喝杯茶吧...
 
 ### 安装vim插件
 使用vim的命令模式
