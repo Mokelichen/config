@@ -1,4 +1,11 @@
 #!/bin/bash
+#author：mokelichen
+#date：2022/10/21
+
+
+#修改为自己的git配置
+USERNAME=mokelichen
+EMAIL=1569089678@qq.com
 
 #修改yum源
 function Modify_yum(){
@@ -61,8 +68,8 @@ function Config_Vim(){
 #配置git
 function Config_Git(){
     echo -e "[user] \n \
-    username=mokelichen \n \
-    email=1569089678@qq.com \n " > .gitconfig
+    username=${USERNAME} \n \
+    email=${EMAIL} \n " > .gitconfig
 }
 
 #配置docker启动mysql
