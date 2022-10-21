@@ -55,8 +55,8 @@ function Install_Docker(){
 
 #配置vim
 function Config_Vim(){    
-    cp -f config/.bashrc ~/.bashrc
-    cp -f config/.vimrc ~/.vimrc
+    cp -f .bashrc ~/.bashrc
+    cp -f .vimrc ~/.vimrc
 
     go env -w GO111MODULE=on
     go env -w GOPROXY=https://goproxy.cn,direct
@@ -78,7 +78,7 @@ function Config_DockerMysql(){
     mkdir -p /mydata/mysql/data/
     mkdir -p /mydata/mysql/log/
 
-    cp -f config/my.cnf /mydata/mysql/conf/my.cnf
+    cp -f my.cnf /mydata/mysql/conf/my.cnf
     docker pull mysql:5.7
     docker run -p 3306:3306 --name mysql -v /mydata/mysql/log:/var/log/mysql -v /mydata/mysql/data:/var/lib/mysql -v /mydata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
     sleep 2
@@ -92,14 +92,14 @@ function Config_DockerRedis(){
     mkdir -p /mydata/redis/conf
     mkdir -p /mydata/redis/data
 
-    cp -f config/redis.conf /mydata/redis/conf/redis.conf
+    cp -f redis.conf /mydata/redis/conf/redis.conf
     docker pull redis
     docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf -d redis redis-server /etc/redis/redis.conf --appendonly yes
 
 }
 
 #main方法
-function Main(){    
+function Main(){
     Modify_yum
     Install_Software
     Install_GO
