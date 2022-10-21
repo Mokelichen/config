@@ -13,14 +13,12 @@ function Install_Software(){
     #下载vim
     git clone https://github.com/vim/vim.git
     #编译安装
-    cd vim/src
-    ./configure --prefix=/usr/local
+    cd vim/src && ./configure --prefix=/usr/local
     make
     make install
 
-    cd ../..
+    cd ../.. && mkdir -p ~/.vim/bundle
     #下载Vundle插件
-    mkdir -p ~/.vim/bundle
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 }
