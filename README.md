@@ -17,14 +17,13 @@ git clone https://github.com/Mokelichen/config.git
 3.修改脚本
 cd config && vim one_key_install.sh
 ```sh
-USERNAME=$(你的git名称)
-EMAIL=$(你的git邮箱)
+USERNAME=你的git名称
+EMAIL=你的git邮箱
 ```
-
 
 3.运行脚本
 ```sh
-cd config && bash one_key_install.sh
+bash one_key_install.sh
 ```
 去喝杯茶吧...
 
