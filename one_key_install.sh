@@ -81,9 +81,6 @@ function Config_DockerMysql(){
     cp -f my.cnf /mydata/mysql/conf/my.cnf
     docker pull mysql:5.7
     docker run -p 3306:3306 --name mysql -v /mydata/mysql/log:/var/log/mysql -v /mydata/mysql/data:/var/lib/mysql -v /mydata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
-    sleep 2
-    docker exec -it mysql mysql -uroot -proot -e "grant all privileges on *.* to 'root'@'%' identified by 'root' with grant option;"
-    docker exec -it mysql mysql -uroot -proot -e "flush privileges;"
     
 }
 
