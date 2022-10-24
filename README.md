@@ -3,6 +3,7 @@
 
 ### 获取脚本
 用户：root
+
 1.安装git
 ```sh
 yum install git -y
@@ -12,6 +13,15 @@ yum install git -y
 ```sh
 git clone https://github.com/Mokelichen/config.git
 ```
+
+3.修改脚本
+cd config && vim one_key_install.sh
+```sh
+USERNAME=$(你的git名称)
+EMAIL=$(你的git邮箱)
+```
+
+
 3.运行脚本
 ```sh
 cd config && bash one_key_install.sh
@@ -24,3 +34,4 @@ cd config && bash one_key_install.sh
 :PlugInstall
 ```
 静静等待出现左下角出现Done！
+
