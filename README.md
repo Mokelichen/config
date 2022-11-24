@@ -30,7 +30,7 @@ bash one_key_install.sh
 ### 安装vim插件
 使用vim的命令模式
 ```sh
-:PlugInstall
+:PluginInstall
 ```
 静静等待出现左下角出现Done！
 
